@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://zhuoyouwx.afunapp.com//game/create_lr_manual_submit -->
+<html lang="en-US"><head><meta http-equiv="Content-Type"content="text/html; charset=UTF-8">
+
+<meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<title>狼人杀</title>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'lr_page.css' %}">
+</head>
+<body>
+
+<div class="gridContainer clearfix">
+	{% block content %}
+	{% endblock content %}
+</div>
+
+{% block forJS %}
+{% endblock forJS %}
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="font-size: 34px; margin: 20px auto;">欢迎进入房间：<b>{{ room_id }}</b></h1>
+<div class="box clearfix room_info">
+<span>{{ config_msg }}</span>
+<hr>
+<span>{{ role_msg }}</span>
+</div>
+<input id="creategame" type="submit" class="main_btn" value="新一轮游戏" onclick="location.href='{% url 'lr:play_game' %}'">
+{% endblock content %}
