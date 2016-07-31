@@ -6,5 +6,9 @@
 <div class="box clearfix room_info">
 <span>{{ config_msg }}</span>
 </div>
-<input id="creategame" type="submit" class="main_btn" value="新一轮游戏" onclick="location.href='{% url 'lr:finish_game' room_id %}'">
+
+<form action="{% url 'lr:finish_game' room_id %}" method="post">
+{% csrf_token %}
+<input id="creategame" type="submit" class="main_btn" value="新一轮游戏">
+</form>
 {% endblock content %}

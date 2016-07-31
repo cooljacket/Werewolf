@@ -11,30 +11,7 @@
 <div class="gridContainer clearfix">
 	<h1 style="font-size: 34px; margin: 20px auto;">当前玩家太多了，麻烦您稍后再来创建房间</h1>
 	<div class="box clearfix room_info">
-	<table class="info_table">
-	<tbody>
-		<tr>
-			<td width="40%"align="right">配置：</td>
-			<td align="left"width="50%">一共6人, 1狼人</td>
-		</tr>
-		<tr>
-			<td align="right">狼人：</td>
-			<td align="left">1号</td>
-		</tr>
-		<tr>
-			<td align="right">预言家：</td>
-			<td align="left">2号</td>
-		</tr>
-		<tr>
-			<td align="right">女巫：</td>
-			<td align="left">5号</td>
-		</tr>
-		<tr>
-			<td align="right">丘比特：</td>
-			<td align="left">3号</td>
-		</tr>
-	</tbody>
-	</table>
+	<input id="creategame" type="submit" class="main_btn" value="法官入口" onclick="location.href={% url 'lr:start_game' %}">
 	</div>
 </div>
 

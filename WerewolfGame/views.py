@@ -19,14 +19,15 @@ def play_game(request):
 	return render(request, 'play_game.html')
 
 
+# CSRF_COOKIE, request.META
 def create_room(request):
 	# people=6&lr=1&cunmin=2&yyj=1&nv=1&qbt=1&sw=1&hunter=1
-	numOfAllPeople = request.GET['people']
+	numOfAllPeople = request.POST['people']
 	config_msg = u'配置：总共{0}人'.format(numOfAllPeople)
 
 	role_queue = []
-	for abbr, idx in abbr2idx.iteritems():
-		num = int(request.GET.get(abbr, 0))
+	for abbr, idx in abbr2idx.items():
+		num = int(request.POST.get(abbr, 0))
 		config_msg += u'，{0}{1}'.format(num, names[idx])
 		if num:
 			role_queue += [str(idx)] * num
@@ -51,7 +52,7 @@ def create_room(request):
 # 要用一种机制防止客户端多次占用一个角色？
 def enter_room(request):
 	print(request)
-	room_id = request.GET.get('room_id', None)
+	room_id = request.POST.get('room_id', None)
 	if not room_id:
 		return render(request, 'play_game.html')
 	try:
@@ -89,3 +90,7 @@ def getAllRoomsId():
 	for room in all_rooms:
 		all_room_ids.add(room.room_id)
 	return all_room_ids
+
+
+def genGodId():
+	pass
